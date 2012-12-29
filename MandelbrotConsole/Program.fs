@@ -4,5 +4,5 @@ open MandelbrotGenerator
 
 [<EntryPoint>]
 let main args = 
-  renderZebraMandelbrotSet () |> ignore
+  renderZebraMandelbrotSet255x255 () |> ignore
   0

@@ -11,7 +11,7 @@ let isMandelbrot c =
   abs ((mandelbrotOf c c 50 0).Magnitude) < 2.0
 
 // Renders a B/W mandelbrot set onto a 2D Array of true/false values
-let renderZebraMandelbrotSet () =
+let renderZebraMandelbrotSet255x255 () =
   let xStart, xStep, xEnd = -1.0, 0.05, 1.0
   let yStart, yStep, yEnd = -2.0, 0.0315, 0.5
   
