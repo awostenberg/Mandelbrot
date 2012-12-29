@@ -21,6 +21,6 @@ Global
 		{42499342-5BFD-4162-A2DB-C8D4EB8F5EB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Mandelbrot\MandelbrotGenerator.fsproj
+		StartupItem = MandelbrotConsole\MandelbrotConsole.fsproj
 	EndGlobalSection
 EndGlobal
