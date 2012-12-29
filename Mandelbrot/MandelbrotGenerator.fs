@@ -8,7 +8,7 @@ let isMandelbrot c =
       mandelbrotOf oldComplex (complex * complex + oldComplex) maxI (i + 1)
     else
       complex
-  abs ((mandelbrotOf c c 10 0).Magnitude) < 2.0
+  abs ((mandelbrotOf c c 50 0).Magnitude) < 2.0
 
 // Creates a 2D array full of true/false values -- true if the point is in the set, false if it is not
 let renderMandelbrotSet () = Array2D.init 2 2 (fun x y -> isMandelbrot (new Complex(x |> float, y |> float)))
