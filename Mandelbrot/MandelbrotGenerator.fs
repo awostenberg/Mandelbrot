@@ -12,8 +12,8 @@ let isMandelbrot c =
 
 // Renders a B/W mandelbrot set onto a 255x255 2D Array of true/false values
 let renderZebraMandelbrotSet255x255 () =
-  let xStart, xStep, xEnd = -1.0, 0.0078, 1.0
-  let yStart, yStep, yEnd = -2.0, 0.0098, 0.5
+  let xStart, xStep, xEnd = -1.0, 0.05, 1.0
+  let yStart, yStep, yEnd = -2.0, 0.0315, 0.5
   
   for y in yStart..yStep..yEnd do
     for x in xStart..xStep..xEnd do
