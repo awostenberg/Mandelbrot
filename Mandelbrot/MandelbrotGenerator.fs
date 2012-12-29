@@ -11,10 +11,9 @@ let isMandelbrot c =
   abs ((mandelbrotOf c c 50 0).Magnitude) < 2.0
 
 // Renders a B/W mandelbrot set onto a 255x255 2D Array of true/false values
-let renderZebraMandelbrotSet255x255 () =
-  let xStart, xStep, xEnd = -1.0, 0.05, 1.0
-  let yStart, yStep, yEnd = -2.0, 0.0315, 0.5
-  
+let renderZebraMandelbrotSet255x255 zoom =
+  let xStart, xStep, xEnd = -2.0 / zoom, 0.0315 / zoom, 0.5 / zoom
+  let yStart, yStep, yEnd = -1.0 / zoom, 0.05 / zoom, 1.0 / zoom
   for y in yStart..yStep..yEnd do
     for x in xStart..xStep..xEnd do
       if isMandelbrot (new Complex(x, y)) then
