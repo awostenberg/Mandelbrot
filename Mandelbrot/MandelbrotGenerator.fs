@@ -10,11 +10,13 @@ let isMandelbrot c =
       complex
   abs ((mandelbrotOf c c 50 0).Magnitude) < 2.0
 
-// Creates a 2D array full of true/false values -- true if the point is in the set, false if it is not
-//let renderMandelbrotSet () = Array2D.init 2 2 (fun x y -> isMandelbrot (new Complex(x |> float, y |> float)))
-let renderMandelbrotSet () =
-  for y in (-1.0)..(0.05)..(1.0) do
-    for x in (-2.0)..(0.0315)..(0.5) do
+// Renders a B/W mandelbrot set onto a 2D Array of true/false values
+let renderZebraMandelbrotSet () =
+  let xStart, xStep, xEnd = -1.0, 0.05, 1.0
+  let yStart, yStep, yEnd = -2.0, 0.0315, 0.5
+  
+  for y in yStart..yStep..yEnd do
+    for x in xStart..xStep..xEnd do
       if isMandelbrot (new Complex(x, y)) then
         printf "*"
       else
