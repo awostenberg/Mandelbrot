@@ -6,7 +6,7 @@ open MandelbrotGenerator
 let main args =
   let zoom =
     if args.Length > 0 then
-      args.[0] |> float
+      args.[0] |> float |> abs
     else
       1.0
   renderZebraMandelbrotSet255x255 zoom |> ignore
