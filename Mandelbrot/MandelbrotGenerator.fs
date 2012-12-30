@@ -10,8 +10,8 @@ let isMandelbrot c =
       complex
   abs ((mandelbrotOf c c 50 0).Magnitude) < 2.0
 
-// Renders a B/W mandelbrot set onto a 255x255 2D Array of true/false values
-let renderZebraMandelbrotSet255x255 cx cy zoom =
+// Renders a B/W mandelbrot set onto a 2D Array of true/false values
+let renderZebraMandelbrotSet cx cy zoom =
   let xStart, xStep, xEnd = -2.0 / zoom + cx, 0.0315 / zoom, 0.5 / zoom + cx
   let yStart, yStep, yEnd = -1.0 / zoom + cy, 0.05 / zoom, 1.0 / zoom + cy
   for y in yStart..yStep..yEnd do

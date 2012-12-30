@@ -10,5 +10,5 @@ let getFloatArg (args : string []) i defaultVal =
 
 [<EntryPoint>]
 let main args =
-  renderZebraMandelbrotSet255x255 (getFloatArg args 0 0.0) (getFloatArg args 1 0.0) (getFloatArg args 2 1.0)
+  renderZebraMandelbrotSet (getFloatArg args 0 0.0) (getFloatArg args 1 0.0) (getFloatArg args 2 1.0)
   0
