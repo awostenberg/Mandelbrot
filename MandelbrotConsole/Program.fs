@@ -4,7 +4,7 @@ open MandelbrotGenerator
 
 let getFloatArg (a : string []) i defaultVal =
   if (a.Length - 1) > i then
-    a.[0] |> float
+    a.[i] |> float
   else
     defaultVal
 
