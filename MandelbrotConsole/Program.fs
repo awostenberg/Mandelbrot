@@ -2,9 +2,9 @@ module MandelbrotConsole.Main
 open System.Numerics
 open MandelbrotGenerator
 
-let getFloatArg (a : string []) i defaultVal =
-  if (a.Length - 1) > i then
-    a.[i] |> float
+let getFloatArg (args : string []) i defaultVal =
+  if i < args.Length then
+    args.[i] |> float
   else
     defaultVal
 
