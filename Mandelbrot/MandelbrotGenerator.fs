@@ -11,11 +11,11 @@ let isMandelbrot c =
   abs ((mandelbrotOf c c 50 0).Magnitude) < 2.0
 
 // Renders a B/W mandelbrot set onto a 2D Array of true/false values
-let renderZebraMandelbrotSet cx cy zoom =
-  let xStart, xStep, xEnd = -2.0 / zoom + cy, 0.0315 / zoom, 2.0 / zoom + cy
-  let yStart, yStep, yEnd = -1.0 / zoom + cx, 0.05 / zoom, 2.0 / zoom + cx
-  let xw, yw = round xStart + xEnd / xStep |> int, round yStart + yEnd / yStep |> int
-  let ary = Array2D.zeroCreate<bool> (abs ((yStart - yEnd) / yStep) + 1.0 |> int) (abs ((xStart - xEnd) / xStep) + 1.0 |> int)//(round xStart + xEnd / xStep |> int) (round yStart + yEnd / yStep |> int)
+let renderZebraMandelbrotSet width height cx cy powerZoom =
+  let zoom = powerZoom ** 2.0
+  let xStart, xStep, xEnd = -2.0 / zoom + cx, 4.0 / (width |> float) / zoom, 2.0 / zoom + cx
+  let yStart, yStep, yEnd = -1.0 / zoom + cy, 4.0 / (height |> float) / zoom, 1.0 / zoom + cy
+  let ary = Array2D.zeroCreate<bool> (abs ((yStart - yEnd) / yStep) + 1.0 |> int) (abs ((xStart - xEnd) / xStep) + 1.0 |> int)
   for x in xStart..xStep..xEnd do
     for y in yStart..yStep..yEnd do
       let rx, ry = (x - xStart) * (1.0 / xStep) |> int, (y - yStart) * (1.0 / yStep) |> int
