@@ -13,9 +13,9 @@ let isMandelbrot c =
 // Renders a B/W mandelbrot set onto a 2D Array of true/false values
 let renderZebraMandelbrotSet width height cx cy powerZoom =
   let zoom = powerZoom ** 2.0
-  let xStart, xStep, xEnd = -2.0 / zoom + cx, 4.0 / (width |> float) / zoom, 2.0 / zoom + cx
-  let yStart, yStep, yEnd = -1.0 / zoom + cy, 4.0 / (height |> float) / zoom, 1.0 / zoom + cy
-  let ary = Array2D.zeroCreate<bool> (abs ((yStart - yEnd) / yStep) + 1.0 |> int) (abs ((xStart - xEnd) / xStep) + 1.0 |> int)
+  let xStart, xStep, xEnd = -2.0 / zoom + cx, 4.0 / (width - 1 |> float) / zoom, 2.0 / zoom + cx
+  let yStart, yStep, yEnd = -1.0 / zoom + cy, 4.0 / (height - 1 |> float) / zoom, 1.0 / zoom + cy
+  let ary = Array2D.zeroCreate<bool> width height
   for x in xStart..xStep..xEnd do
     for y in yStart..yStep..yEnd do
       let rx, ry = (x - xStart) * (1.0 / xStep) |> int, (y - yStart) * (1.0 / yStep) |> int
